@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "skeletonpy"
+version = "0.1.0"
+description = ""
+authors = ["Sato Masahiro <sato-ma@fujitsu.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+googleapis-common-protos = "^1.53.0"
+grpclib = "^0.4.2"
+
+[tool.poetry.dev-dependencies]
+isort = "^5.9.3"
+flake8 = "^3.9.2"
+yapf = "^0.31.0"
+grpclib = "^0.4.2"
+grpcio-tools = "^1.39.0"
+grpcio = "^1.39.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,15 @@
+FROM python:3.9.6
+
+RUN pip install poetry
+
+COPY pyproject.toml .
+COPY poetry.lock .
+RUN poetry export -f requirements.txt --output requirements.txt && pip install -r requirements.txt
+
+ENV PYTHONPATH /gen/py
+COPY gen /gen
+
+ARG SERVICE_NAME=svc/greeter
+COPY microservices/$SERVICE_NAME /app
+
+CMD [ "python", "/app/run.py" ]
